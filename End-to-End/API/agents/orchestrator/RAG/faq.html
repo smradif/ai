@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Technical FAQ</title>
+  <style>
+    :root {
+      --navy: #123b5d;
+      --blue: #2474a6;
+      --text: #243640;
+      --muted: #4a6070;
+      --border: #d8e3ea;
+      --soft: #f7fafc;
+      --banner: #edf3f7;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: #eef2f5;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+      line-height: 1.55;
+    }
+
+    .topbar {
+      background: var(--navy);
+      color: white;
+      padding: 16px 0;
+    }
+
+    .topbar-inner,
+    main,
+    footer {
+      width: min(960px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .topbar-inner {
+      font-size: 0.8rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+    }
+
+    main {
+      padding: 54px 0 40px;
+    }
+
+    .hero {
+      margin-bottom: 42px;
+    }
+
+    h1 {
+      margin: 0 0 8px;
+      color: var(--navy);
+      font-size: clamp(2.25rem, 8vw, 3.5rem);
+      line-height: 1.05;
+    }
+
+    .subtitle {
+      max-width: 700px;
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      margin: 28px 0 0;
+      border: 1px solid var(--border);
+      background: var(--banner);
+      text-align: center;
+    }
+
+    .summary div {
+      padding: 18px 12px;
+    }
+
+    .summary div + div {
+      border-left: 1px solid var(--border);
+    }
+
+    .summary strong {
+      display: block;
+      color: var(--navy);
+      font-size: 1.35rem;
+    }
+
+    .summary span {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    section {
+      margin-top: 38px;
+    }
+
+    h2 {
+      margin: 0 0 16px;
+      color: var(--navy);
+      font-size: 1.55rem;
+    }
+
+    article {
+      margin-bottom: 14px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      break-inside: avoid;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 12px 16px;
+      background: var(--blue);
+      color: white;
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    article p {
+      margin: 0;
+      padding: 16px;
+      background: var(--soft);
+      font-size: 0.98rem;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      padding: 18px 0 28px;
+      border-top: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+
+    @media (max-width: 620px) {
+      .topbar-inner,
+      main,
+      footer {
+        width: min(100% - 28px, 960px);
+      }
+
+      main { padding-top: 38px; }
+
+      .summary { grid-template-columns: 1fr; }
+
+      .summary div + div {
+        border-left: 0;
+        border-top: 1px solid var(--border);
+      }
+
+      footer {
+        flex-direction: column;
+        gap: 4px;
+      }
+    }
+
+    @media print {
+      body { background: white; }
+      .topbar { background: var(--navy) !important; }
+      main { width: 100%; padding: 24px 0; }
+      article { break-inside: avoid; }
+      h2 { break-after: avoid; }
+      footer { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">TECHNICAL FAQ</div>
+  </header>
+
+  <main>
+    <div class="hero">
+      <h1>Technical FAQ</h1>
+      <p class="subtitle">Common questions and concise answers for software development, APIs, databases, source control, deployment, security, and operations.</p>
+      <div class="summary" aria-label="Document summary">
+        <div><strong>21</strong><span>Frequently asked topics</span></div>
+        <div><strong>6</strong><span>Technical areas</span></div>
+        <div><strong>Concise</strong><span>Answer format</span></div>
+      </div>
+    </div>
+
+    <section>
+      <h2>Software Development</h2>
+      <article>
+        <h3>What is the difference between a bug and an incident?</h3>
+        <p>A bug is a defect in code or configuration that produces incorrect behavior. An incident is the customer-visible operational impact of one or more bugs or failures. For example, a retry loop is a bug; the resulting API outage is an incident.</p>
+      </article>
+      <article>
+        <h3>How should I debug a problem systematically?</h3>
+        <p>Reproduce the problem, establish the expected behavior, collect the smallest useful evidence (logs, metrics, inputs, environment), form a single hypothesis, test it, and verify the fix. Change only one variable at a time and record findings so they can be reviewed or shared.</p>
+      </article>
+      <article>
+        <h3>What should a useful log entry contain?</h3>
+        <p>Include a timestamp, severity, service/component name, correlation or request ID, event outcome, and enough context to investigate. Avoid secrets, access tokens, passwords, personal data, and unbounded payloads. Prefer structured key-value fields over prose-heavy messages.</p>
+      </article>
+      <article>
+        <h3>What is the difference between unit, integration, and end-to-end tests?</h3>
+        <p>Unit tests isolate a function or component. Integration tests verify interactions between components or with an external service. End-to-end tests exercise a complete user or system workflow, usually through public interfaces.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>APIs and Web Services</h2>
+      <article>
+        <h3>What does HTTP 4xx versus 5xx mean?</h3>
+        <p>A 4xx status indicates that the request cannot be completed due to client-side input or authorization (for example 400, 401, 403, or 404). A 5xx status indicates that the server failed while processing an otherwise valid request (for example 500 or 503).</p>
+      </article>
+      <article>
+        <h3>How should I design a REST API response?</h3>
+        <p>Use a clear resource URI, standard HTTP methods and status codes, stable JSON field names, and a consistent error shape. Document pagination, filtering, authentication, rate limits, deprecation, and versioning. Avoid returning implementation details or secrets in error messages.</p>
+      </article>
+      <article>
+        <h3>What is idempotency and why does it matter?</h3>
+        <p>An operation is idempotent when repeating it produces the same result or has the same effect. It is especially important for payments and retries: a client can safely repeat a request after a timeout or lost response. Use idempotency keys for operations that may create resources.</p>
+      </article>
+      <article>
+        <h3>How do authentication and authorization differ?</h3>
+        <p>Authentication establishes who a caller is. Authorization establishes what that caller may do. A valid token proves authentication but does not automatically grant permission to every resource.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Databases and Data</h2>
+      <article>
+        <h3>Why is a database query slow?</h3>
+        <p>Common causes include missing indexes, inefficient joins or filters, large result sets, table bloat, lock contention, resource limits, or network latency. Use the query plan and database metrics before changing indexes or rewriting SQL.</p>
+      </article>
+      <article>
+        <h3>What is a database transaction?</h3>
+        <p>A transaction groups operations so they complete atomically: all changes commit together or none do under normal failure handling. Transactions should use the smallest isolation level and scope needed to preserve correctness.</p>
+      </article>
+      <article>
+        <h3>What is the difference between backup and replication?</h3>
+        <p>A backup is a recoverable copy intended for point-in-time restoration. Replication copies changes to another system to improve availability or distribute reads. Replication alone does not protect against accidental deletes or application-level corruption.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Git and Source Control</h2>
+      <article>
+        <h3>What is the difference between merge and rebase?</h3>
+        <p>A merge adds a commit that joins histories and preserves branch context. Rebase moves commits onto a new base and creates a linear-looking history. Avoid rebasing commits that other collaborators rely on and follow the team workflow.</p>
+      </article>
+      <article>
+        <h3>How do I recover a mistaken commit?</h3>
+        <p>If the commit is not shared, reset or rebase can remove or rewrite it. If it is shared or production code is affected, prefer a new revert commit that reverses the changes. Preserve evidence and rerun tests.</p>
+      </article>
+      <article>
+        <h3>What makes a good pull request?</h3>
+        <p>Keep it focused, explain the problem and solution, link relevant issues, include test evidence, and note breaking changes or migrations. Small, reviewable diffs are easier to reason about and less risky.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Deployment and Operations</h2>
+      <article>
+        <h3>What is blue-green deployment?</h3>
+        <p>Two environments run at once: one serves traffic and the other receives the new release. After validation, traffic switches to the new environment. The old environment remains available for a rollback.</p>
+      </article>
+      <article>
+        <h3>What is observability?</h3>
+        <p>Observability is the ability to understand system behavior from external evidence. It combines logs, metrics, traces, alerts, and dashboards so operators can answer questions during known and novel failures.</p>
+      </article>
+      <article>
+        <h3>How should capacity be provisioned?</h3>
+        <p>Baseline requirements with load testing and historical usage, then add safe headroom for spikes and failures. Autoscaling helps but requires sensible minimums, warm-up time, limits, and cost controls.</p>
+      </article>
+      <article>
+        <h3>What is rollback?</h3>
+        <p>Rollback restores a previously known-good application, configuration, or data state after a failed release. A complete rollback plan also defines database compatibility and customer-side cache or worker implications.</p>
+      </article>
+    </section>
+
+    <section>
+      <h2>Security and Reliability</h2>
+      <article>
+        <h3>How should secrets be managed?</h3>
+        <p>Use a managed secret store or environment configuration supplied at runtime. Never place secrets in source control, logs, tickets, screenshots, or build artifacts. Rotate exposed credentials promptly and grant only the permissions required.</p>
+      </article>
+      <article>
+        <h3>What is least privilege?</h3>
+        <p>Every person, service, build job, and network path should receive only the permissions needed for its authorized task. Review temporary grants and remove unused access.</p>
+      </article>
+      <article>
+        <h3>How can a system tolerate dependency failures?</h3>
+        <p>Use timeouts, bounded retries with backoff and jitter, circuit breakers, queues, fallbacks, and bulkheads where appropriate. Avoid retry storms and make partial degradation predictable.</p>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <span>Common software engineering and operations questions</span>
+    <span>Technical FAQ</span>
+  </footer>
+</body>
+</html>

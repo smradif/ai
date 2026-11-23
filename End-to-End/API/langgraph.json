@@ -1,0 +1,10 @@
+{
+  "dependencies": ["."],
+  "graphs": {
+    "person_graph": "./main.py:person_graph"
+  },
+  "env": ".env",
+  "auth": {
+    "path": "./auth/langgraph.py:auth"
+  }
+}

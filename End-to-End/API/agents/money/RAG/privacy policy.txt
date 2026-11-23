@@ -1,0 +1,86 @@
+# Privacy Policy
+
+**Last Updated:** 2026‑10‑11
+
+## 1. Introduction
+
+[101] (“we”, “our”, “us”) respects your privacy and is committed to protecting personal data collected through our services (including our website, mobile app, and email communications). This policy explains how we collect, use, disclose, and safeguard your information.
+
+## 2. Who We Are
+
+- **Name:** 101  
+- **Address:** 10 space drive, Mars  
+- **Contact Email:** contactus@101.com
+
+## 3. Data We Collect
+
+| Data Category | Types of Data | Purpose |
+|---------------|---------------|---------|
+| **Personal Identification** | Full name, date of birth, nationality, passport/ID number | Verification, compliance (KYC/AML) |
+| **Contact Information** | Email, phone number, residential address | Account management, support |
+| **Financial Information** | Bank account numbers, transaction details, exchange rates | Transfer execution |
+| **Technical Data** | IP address, device ID, browser info | Security, fraud detection |
+| **User‑Generated Content** | Messages, complaints, feedback | Customer support |
+
+## 4. How We Use Your Data
+
+1. **Service Delivery:** Verify identity, process transfers, generate receipts.  
+2. **Compliance:** Meet legal obligations (AML/KYC, tax reporting).  
+3. **Security:** Detect and prevent fraud, protect system integrity.  
+4. **Communication:** Send account updates, promotions (opt‑in only).  
+5. **Analytics & Improvement:** Improve services and user experience (anonymised).
+
+## 5. Data Sharing & Transfers
+
+- **Third‑Party Service Providers:** We engage trusted partners (payment processors, cloud services, regulatory bodies) under strict confidentiality agreements.  
+- **Legal Requests:** We disclose data when required by law or court order.  
+- **Cross‑Border Transfers:** Data may be stored or processed in jurisdictions with adequate data protection laws (e.g., EU, Canada, Australia).
+
+## 6. Data Retention
+
+We retain personal data for the period necessary to:
+
+- Fulfil service obligations and regulatory requirements.
+- Resolve disputes or claims.
+- Prevent fraud and protect system integrity.
+
+Afterward, data is securely deleted or anonymised.
+
+## 7. Your Rights
+
+Depending on jurisdiction, you may:
+
+- **Access** the personal data we hold about you.  
+- **Rectify** inaccuracies.  
+- **Request** deletion (subject to legal retention periods).  
+- **Object** to processing for direct marketing.  
+- **Withdraw** consent (where applicable).
+
+To exercise any right, email **contactus@101.com**.
+
+## 8. Security Measures
+
+- Encryption (AES‑256, TLS 1.3).  
+- Multi‑factor authentication.  
+- Regular security audits and penetration testing.  
+- Employee training on data protection.
+
+## 9. Cookies & Tracking
+
+We use essential cookies for security and session management. Optional analytics cookies may be used with your consent.
+
+## 10. International Users
+
+If you are located outside the jurisdiction where our data processing occurs, your personal data may be transferred to and processed in jurisdictions with equivalent data protection laws. We take appropriate safeguards as mandated by law.
+
+## 11. Changes to This Policy
+
+We reserve the right to update this Privacy Policy. Updated versions will be posted on our website with a revised effective date.
+
+## 12. Contact
+
+For questions or concerns about this Privacy Policy, please contact:
+
+**Email:** contactus@101.com  
+**Mail:** (Insert mailing address)
+
