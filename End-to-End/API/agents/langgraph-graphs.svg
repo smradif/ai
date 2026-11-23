@@ -1,0 +1,276 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1880" height="2360" viewBox="0 0 1880 2360" role="img" aria-labelledby="title description">
+  <title id="title">LangGraph workflows in the agents package</title>
+  <desc id="description">A visual map of the eight agents graph.py files, including their nodes, routes, loops, and the empty bank graph file.</desc>
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#9db0cc"/>
+    </marker>
+    <marker id="arrowAccent" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L10,5 L0,10 z" fill="#65d6c4"/>
+    </marker>
+    <style>
+      text { font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif; fill: #e8eef8; }
+      .bg { fill: #0c1220; }
+      .card { fill: #121b2c; stroke: #25334b; stroke-width: 1.5; }
+      .heading { font-size: 23px; font-weight: 700; }
+      .subtitle { font-size: 12px; fill: #98a9c2; }
+      .node { fill: #1c2a40; stroke: #426080; stroke-width: 1.5; }
+      .node-accent { fill: #153b3e; stroke: #39a99e; stroke-width: 1.6; }
+      .node-warm { fill: #3a2c28; stroke: #bc8564; stroke-width: 1.5; }
+      .node-muted { fill: #19202d; stroke: #465166; stroke-width: 1.2; }
+      .node-label { font-size: 13px; font-weight: 650; text-anchor: middle; dominant-baseline: middle; }
+      .small { font-size: 11px; fill: #aab8cd; }
+      .tiny { font-size: 10px; fill: #9cacc2; }
+      .edge { fill: none; stroke: #9db0cc; stroke-width: 1.8; marker-end: url(#arrow); }
+      .edge-accent { fill: none; stroke: #65d6c4; stroke-width: 1.9; marker-end: url(#arrowAccent); }
+      .edge-dash { fill: none; stroke: #65d6c4; stroke-width: 1.8; stroke-dasharray: 6 5; marker-end: url(#arrowAccent); }
+      .edge-label { font-size: 10px; fill: #b7c5d9; }
+      .badge { fill: #19333a; stroke: #347d79; stroke-width: 1; }
+      .badge-label { font-size: 10px; fill: #a6e9dc; text-anchor: middle; dominant-baseline: middle; font-weight: 700; }
+      .callout { fill: #1b2535; stroke: #35445c; stroke-width: 1; }
+      .callout-text { font-size: 11px; fill: #c2cede; }
+      .header { font-size: 34px; font-weight: 750; letter-spacing: -0.5px; }
+      .intro { font-size: 15px; fill: #a8b7cc; }
+      .legend { font-size: 11px; fill: #a8b7cc; }
+    </style>
+  </defs>
+  <rect class="bg" width="1880" height="2360"/>
+  <text class="header" x="48" y="58">LangGraph workflows</text>
+  <text class="intro" x="48" y="88">How the agents' graph.py files connect nodes, route state, and call tools</text>
+  <g transform="translate(48 112)">
+    <path class="edge" d="M0 0 H34"/>
+    <text class="legend" x="44" y="4">declared transition</text>
+    <path class="edge-dash" d="M190 0 H224"/>
+    <text class="legend" x="234" y="4">dynamic Command route</text>
+    <rect class="node-accent" x="420" y="-10" width="20" height="20" rx="6"/>
+    <text class="legend" x="450" y="4">entry / terminal</text>
+    <text class="legend" x="620" y="4">Dashed arrows highlight runtime routing expressed with Command.</text>
+  </g>
+
+  <!-- Orchestrator -->
+  <g transform="translate(32 150)">
+    <rect class="card" width="904" height="530" rx="18"/>
+    <text class="heading" x="28" y="40">Orchestrator</text>
+    <text class="subtitle" x="28" y="64">agents/orchestrator/graph.py · classify, handle, then respond</text>
+    <rect class="badge" x="401" y="78" width="102" height="24" rx="12"/>
+    <text class="badge-label" x="452" y="90">ENTRY</text>
+    <path class="edge-accent" d="M452 102 V114"/>
+    <rect class="node-accent" x="377" y="116" width="150" height="42" rx="10"/>
+    <text class="node-label" x="452" y="137">orchestrator_node</text>
+    <path class="edge" d="M452 158 V174"/>
+    <rect class="node" x="377" y="176" width="150" height="42" rx="10"/>
+    <text class="node-label" x="452" y="197">faq_node</text>
+    <path class="edge" d="M452 218 V234"/>
+    <rect class="node" x="377" y="236" width="150" height="42" rx="10"/>
+    <text class="node-label" x="452" y="257">classifier_node</text>
+    <path class="edge" d="M452 278 V294 H170 V310"/>
+    <path class="edge" d="M452 294 V310"/>
+    <path class="edge" d="M452 294 H734 V310"/>
+    <text class="edge-label" x="187" y="290">technical</text>
+    <text class="edge-label" x="460" y="306">billing</text>
+    <text class="edge-label" x="686" y="290">otherwise</text>
+    <rect class="node" x="96" y="312" width="148" height="42" rx="10"/>
+    <text class="node-label" x="170" y="333">technical_node</text>
+    <rect class="node" x="378" y="312" width="148" height="42" rx="10"/>
+    <text class="node-label" x="452" y="333">billing_node</text>
+    <rect class="node" x="660" y="312" width="148" height="42" rx="10"/>
+    <text class="node-label" x="734" y="333">general_node</text>
+    <path class="edge" d="M170 354 V368 H452 V382"/>
+    <path class="edge" d="M452 354 V382"/>
+    <path class="edge" d="M734 354 V368 H452"/>
+    <rect class="node" x="377" y="384" width="150" height="40" rx="10"/>
+    <text class="node-label" x="452" y="404">escalation_node</text>
+    <path class="edge" d="M452 424 V438"/>
+    <rect class="node" x="377" y="440" width="150" height="38" rx="10"/>
+    <text class="node-label" x="452" y="459">response_node</text>
+    <path class="edge-accent" d="M452 478 V491"/>
+    <rect class="badge" x="419" y="493" width="66" height="24" rx="12"/>
+    <text class="badge-label" x="452" y="505">END</text>
+  </g>
+
+  <!-- Supervisor -->
+  <g transform="translate(944 150)">
+    <rect class="card" width="904" height="530" rx="18"/>
+    <text class="heading" x="28" y="40">Supervisor</text>
+    <text class="subtitle" x="28" y="64">agents/supervisor/graph.py · transfer details, confirmation, completion</text>
+    <rect class="badge" x="401" y="82" width="102" height="24" rx="12"/>
+    <text class="badge-label" x="452" y="94">ENTRY</text>
+    <path class="edge-accent" d="M452 106 V120"/>
+    <rect class="node-accent" x="377" y="122" width="150" height="44" rx="10"/>
+    <text class="node-label" x="452" y="144">supervisor_node</text>
+    <path class="edge" d="M430 166 V193 H180 V218"/>
+    <path class="edge" d="M452 166 V218"/>
+    <path class="edge" d="M474 166 V193 H724 V218"/>
+    <text class="edge-label" x="190" y="188">amount missing</text>
+    <text class="edge-label" x="459" y="205">currency missing</text>
+    <text class="edge-label" x="661" y="188">needs confirmation</text>
+    <rect class="node" x="106" y="220" width="148" height="44" rx="10"/>
+    <text class="node-label" x="180" y="242">amount_node</text>
+    <rect class="node" x="378" y="220" width="148" height="44" rx="10"/>
+    <text class="node-label" x="452" y="242">currency_node</text>
+    <rect class="node" x="650" y="220" width="148" height="44" rx="10"/>
+    <text class="node-label" x="724" y="242">confirmation_node</text>
+    <path class="edge-dash" d="M180 264 V297 H358 V144 H375"/>
+    <path class="edge-dash" d="M452 264 V144 H375"/>
+    <path class="edge-dash" d="M724 264 V297 H546 V144 H529"/>
+    <text class="edge-label" x="113" y="291">extract / validate, then return</text>
+    <text class="edge-label" x="583" y="291">confirm or ask to change</text>
+    <path class="edge-accent" d="M527 144 H843 V387"/>
+    <text class="edge-label" x="570" y="134">all fields + confirmed: create transfer URL</text>
+    <rect class="badge" x="810" y="390" width="66" height="24" rx="12"/>
+    <text class="badge-label" x="843" y="402">END</text>
+    <text class="tiny" x="28" y="505">Routing and completion are implemented inside node functions with Command; no static edges are declared.</text>
+  </g>
+
+  <!-- Travel -->
+  <g transform="translate(32 700)">
+    <rect class="card" width="904" height="530" rx="18"/>
+    <text class="heading" x="28" y="40">Travel</text>
+    <text class="subtitle" x="28" y="64">agents/travel/graph.py · fixed sequence from search to final response</text>
+    <rect class="badge" x="32" y="238" width="66" height="24" rx="12"/>
+    <text class="badge-label" x="65" y="250">START</text>
+    <path class="edge-accent" d="M98 250 H128"/>
+    <rect class="node" x="132" y="225" width="132" height="50" rx="10"/>
+    <text class="node-label" x="198" y="250">flight_node</text>
+    <path class="edge" d="M264 250 H294"/>
+    <rect class="node" x="298" y="225" width="132" height="50" rx="10"/>
+    <text class="node-label" x="364" y="250">hotel_node</text>
+    <path class="edge" d="M430 250 H460"/>
+    <rect class="node" x="464" y="225" width="146" height="50" rx="10"/>
+    <text class="node-label" x="537" y="250">itinerary_node</text>
+    <path class="edge" d="M610 250 H640"/>
+    <rect class="node" x="644" y="225" width="132" height="50" rx="10"/>
+    <text class="node-label" x="710" y="250">final_node</text>
+    <path class="edge-accent" d="M776 250 H806"/>
+    <rect class="badge" x="810" y="238" width="66" height="24" rx="12"/>
+    <text class="badge-label" x="843" y="250">END</text>
+    <text class="small" x="452" y="320" text-anchor="middle">Flight search → hotel search → itinerary generation → formatted final answer</text>
+  </g>
+
+  <!-- Money -->
+  <g transform="translate(944 700)">
+    <rect class="card" width="904" height="530" rx="18"/>
+    <text class="heading" x="28" y="40">Money transfer</text>
+    <text class="subtitle" x="28" y="64">agents/money/graph.py · collect amount and currency, then confirm</text>
+    <rect class="badge" x="401" y="82" width="102" height="24" rx="12"/>
+    <text class="badge-label" x="452" y="94">ENTRY</text>
+    <path class="edge-accent" d="M452 106 V120"/>
+    <rect class="node-accent" x="377" y="122" width="150" height="44" rx="10"/>
+    <text class="node-label" x="452" y="144">supervisor_node</text>
+    <path class="edge" d="M430 166 V193 H180 V218"/>
+    <path class="edge" d="M452 166 V218"/>
+    <path class="edge" d="M474 166 V193 H724 V218"/>
+    <text class="edge-label" x="190" y="188">amount missing</text>
+    <text class="edge-label" x="459" y="205">currency missing</text>
+    <text class="edge-label" x="661" y="188">awaiting confirmation</text>
+    <rect class="node" x="106" y="220" width="148" height="44" rx="10"/>
+    <text class="node-label" x="180" y="242">amount_node</text>
+    <rect class="node" x="378" y="220" width="148" height="44" rx="10"/>
+    <text class="node-label" x="452" y="242">currency_node</text>
+    <rect class="node" x="650" y="220" width="148" height="44" rx="10"/>
+    <text class="node-label" x="724" y="242">confirmation_node</text>
+    <path class="edge-dash" d="M180 264 V297 H358 V144 H375"/>
+    <path class="edge-dash" d="M452 264 V144 H375"/>
+    <path class="edge-dash" d="M724 264 V297 H546 V144 H529"/>
+    <text class="edge-label" x="113" y="291">valid value → supervisor</text>
+    <text class="edge-label" x="583" y="291">yes → supervisor; changes re-route</text>
+    <path class="edge-accent" d="M527 144 H843 V387"/>
+    <text class="edge-label" x="570" y="134">all fields + confirmed: create transfer URL</text>
+    <rect class="badge" x="810" y="390" width="66" height="24" rx="12"/>
+    <text class="badge-label" x="843" y="402">END</text>
+    <text class="tiny" x="28" y="505">The supervisor creates the transfer URL; the separate main_node2 function is not added to the graph.</text>
+  </g>
+
+  <!-- Bank -->
+  <g transform="translate(32 1250)">
+    <rect class="card" width="904" height="530" rx="18"/>
+    <text class="heading" x="28" y="40">Bank</text>
+    <text class="subtitle" x="28" y="64">agents/bank/graph.py</text>
+    <rect class="node-muted" x="204" y="178" width="496" height="112" rx="16"/>
+    <text class="node-label" x="452" y="215">No graph is defined</text>
+    <text class="small" x="452" y="246" text-anchor="middle">The file is empty: no nodes, entry point, or edges.</text>
+  </g>
+
+  <!-- Person -->
+  <g transform="translate(944 1250)">
+    <rect class="card" width="904" height="530" rx="18"/>
+    <text class="heading" x="28" y="40">Person</text>
+    <text class="subtitle" x="28" y="64">agents/person/graph.py · gather and validate name / age</text>
+    <rect class="badge" x="401" y="80" width="102" height="24" rx="12"/>
+    <text class="badge-label" x="452" y="92">ENTRY</text>
+    <path class="edge-accent" d="M452 104 V116"/>
+    <rect class="node-accent" x="377" y="118" width="150" height="44" rx="10"/>
+    <text class="node-label" x="452" y="140">person_node</text>
+    <path class="edge" d="M452 162 V185 H180 V208"/>
+    <path class="edge" d="M452 162 V208"/>
+    <path class="edge" d="M452 185 H724 V208"/>
+    <text class="edge-label" x="206" y="180">name missing</text>
+    <text class="edge-label" x="464" y="199">age missing</text>
+    <text class="edge-label" x="677" y="180">both present</text>
+    <rect class="node" x="106" y="210" width="148" height="44" rx="10"/>
+    <text class="node-label" x="180" y="232">name_node</text>
+    <rect class="node" x="378" y="210" width="148" height="44" rx="10"/>
+    <text class="node-label" x="452" y="232">age_node</text>
+    <rect class="node" x="650" y="210" width="148" height="44" rx="10"/>
+    <text class="node-label" x="724" y="232">result_node</text>
+    <path class="edge-dash" d="M180 254 V292 H350 V140 H375"/>
+    <path class="edge-dash" d="M452 254 V140 H375"/>
+    <text class="edge-label" x="124" y="286">valid / invalid input</text>
+    <path class="edge-accent" d="M724 254 V330"/>
+    <rect class="badge" x="691" y="332" width="66" height="24" rx="12"/>
+    <text class="badge-label" x="724" y="344">END</text>
+    <path class="edge-dash" d="M650 232 H616 V388 H452 V164"/>
+    <text class="edge-label" x="454" y="382">result_node also returns Command(goto=person_node)</text>
+    <text class="tiny" x="28" y="493">The builder also declares result_node → END; the dynamic Command route is shown dashed.</text>
+  </g>
+
+  <!-- Chat -->
+  <g transform="translate(32 1800)">
+    <rect class="card" width="904" height="530" rx="18"/>
+    <text class="heading" x="28" y="40">Chat</text>
+    <text class="subtitle" x="28" y="64">agents/chat/graph.py · repeat model/tool turns until no tool calls remain</text>
+    <rect class="badge" x="401" y="108" width="102" height="24" rx="12"/>
+    <text class="badge-label" x="452" y="120">ENTRY</text>
+    <path class="edge-accent" d="M452 132 V158"/>
+    <rect class="node" x="377" y="160" width="150" height="48" rx="10"/>
+    <text class="node-label" x="452" y="184">main_node</text>
+    <path class="edge" d="M420 208 V252 H230 V282"/>
+    <path class="edge" d="M484 208 V252 H674 V282"/>
+    <text class="edge-label" x="245" y="246">no tool calls</text>
+    <text class="edge-label" x="592" y="246">tool calls present</text>
+    <rect class="badge" x="197" y="284" width="66" height="24" rx="12"/>
+    <text class="badge-label" x="230" y="296">END</text>
+    <rect class="node-accent" x="600" y="282" width="148" height="48" rx="10"/>
+    <text class="node-label" x="674" y="306">tool_node</text>
+    <path class="edge" d="M674 330 V378 H452 V210"/>
+    <text class="edge-label" x="530" y="372">tool result → model again</text>
+    <text class="small" x="452" y="430" text-anchor="middle">ToolNode executes the supplied tools; main_node checks the latest message.</text>
+  </g>
+
+  <!-- Calendar -->
+  <g transform="translate(944 1800)">
+    <rect class="card" width="904" height="530" rx="18"/>
+    <text class="heading" x="28" y="40">Calendar &amp; email</text>
+    <text class="subtitle" x="28" y="64">agents/calendar/graph.py · nested create_agent tools; no explicit StateGraph</text>
+    <rect class="node-accent" x="377" y="92" width="150" height="48" rx="10"/>
+    <text class="node-label" x="452" y="116">supervisor agent</text>
+    <text class="tiny" x="452" y="153" text-anchor="middle">chooses one of its two tools</text>
+    <path class="edge" d="M430 140 V174 H226 V198"/>
+    <path class="edge" d="M474 140 V174 H678 V198"/>
+    <rect class="node" x="116" y="200" width="220" height="50" rx="10"/>
+    <text class="node-label" x="226" y="225">schedule_events tool</text>
+    <rect class="node" x="568" y="200" width="220" height="50" rx="10"/>
+    <text class="node-label" x="678" y="225">manage_emails tool</text>
+    <path class="edge" d="M226 250 V285"/>
+    <path class="edge" d="M678 250 V285"/>
+    <rect class="node-warm" x="92" y="287" width="268" height="82" rx="12"/>
+    <text class="node-label" x="226" y="311">calendar_agent</text>
+    <text class="small" x="226" y="337" text-anchor="middle">create event · find available slots</text>
+    <rect class="node-warm" x="544" y="287" width="268" height="82" rx="12"/>
+    <text class="node-label" x="678" y="311">email_agent</text>
+    <text class="small" x="678" y="337" text-anchor="middle">send email</text>
+    <path class="edge-dash" d="M226 369 V405 H452 V142"/>
+    <path class="edge-dash" d="M678 369 V405 H452"/>
+    <text class="tiny" x="452" y="435" text-anchor="middle">Each wrapper invokes its specialist agent and returns its last message.</text>
+  </g>
+</svg>
